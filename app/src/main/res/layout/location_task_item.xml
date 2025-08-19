@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Main Location Task Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Location Info Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/locationTaskTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location Task Title"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/locationAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Location Address"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:drawableStart="@android:drawable/ic_dialog_map"
+                    android:drawableTint="#FF5722"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Notification Status with Toggle -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/notificationToggleBtn"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="🔔 100m"
+                        android:textSize="12sp"
+                        android:textColor="#4CAF50"
+                        app:backgroundTint="#E8F5E8"
+                        app:cornerRadius="16dp"
+                        app:strokeWidth="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp" />
+
+                    <!-- Distance -->
+                    <TextView
+                        android:id="@+id/distanceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="📏 --km away"
+                        android:textSize="12sp"
+                        android:textColor="#999999" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Navigate Button with icon -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/navigateBtn"
+                    style="@style/Widget.Material3.Button.IconButton"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginBottom="6dp"
+                    android:contentDescription="Navigate to location"
+                    app:backgroundTint="#E3F2FD"
+                    app:cornerRadius="22dp"
+                    app:icon="@android:drawable/ic_dialog_map"
+                    app:iconTint="#1976D2"
+                    app:iconSize="20dp"
+                    app:strokeWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Edit Button with icon -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/editLocationTaskBtn"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="6dp"
+                        android:contentDescription="Edit location task"
+                        app:backgroundTint="#FFF3E0"
+                        app:cornerRadius="18dp"
+                        app:icon="@android:drawable/ic_menu_edit"
+                        app:iconTint="#FF9800"
+                        app:iconSize="16dp"
+                        app:strokeWidth="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp" />
+
+                    <!-- Delete Button with icon -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/deleteLocationTaskBtn"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:contentDescription="Delete location task"
+                        app:backgroundTint="#FFEBEE"
+                        app:cornerRadius="18dp"
+                        app:icon="@android:drawable/ic_menu_delete"
+                        app:iconTint="#F44336"
+                        app:iconSize="16dp"
+                        app:strokeWidth="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Expandable Description -->
+        <TextView
+            android:id="@+id/locationTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Task Description"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:background="#F8F9FA"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:drawableStart="@android:drawable/ic_dialog_info"
+            android:drawableTint="#999999"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

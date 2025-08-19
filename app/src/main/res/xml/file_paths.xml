@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- External storage for temporary camera images -->
+    <external-files-path
+        name="my_images"
+        path="Pictures" />
+
+    <!-- Internal storage for profile pictures -->
+    <files-path
+        name="profile_images"
+        path="profiles/" />
+
+    <!-- Cache directory for temporary files -->
+    <cache-path
+        name="cache_images"
+        path="images/" />
+</paths>
+

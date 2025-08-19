@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/bright_white_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        tools:context=".AddTaskPage">
+
+        <!-- Compact Header Section -->
+        <TextView
+            android:id="@+id/headerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Add Task"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- All-in-One Task Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/taskInfoCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#F8FAFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerTxt">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <!-- Task Title Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/titleInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Task Title"
+                    app:boxBackgroundColor="#FFFFFF"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="#6366F1"
+                    app:boxStrokeWidth="1dp"
+                    app:hintTextColor="#6366F1"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="#6366F1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/taskTitleInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:inputType="textCapSentences"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:padding="10dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Task Description Input (Compact) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/descriptionInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Description (Optional)"
+                    app:boxBackgroundColor="#FFFFFF"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="#6366F1"
+                    app:boxStrokeWidth="1dp"
+                    app:hintTextColor="#6366F1"
+                    app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                    app:startIconTint="#6366F1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/taskDescriptionInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:textSize="14sp"
+                        android:textColor="#000000"
+                        android:padding="10dp"
+                        android:gravity="top" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Date Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/chooseDateButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="Select Date"
+                        android:textSize="13sp"
+                        android:textColor="#1976D2"
+                        app:backgroundTint="@android:color/transparent"
+                        app:strokeColor="#1976D2"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_recent_history"
+                        app:iconTint="#1976D2"
+                        app:iconSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/selectedDateTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:text="No date"
+                        android:textColor="#1976D2"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_corner"
+                        android:backgroundTint="#E3F2FD"
+                        android:drawableStart="@android:drawable/ic_menu_recent_history"
+                        android:drawableTint="#1976D2"
+                        android:drawablePadding="6dp" />
+
+                </LinearLayout>
+
+                <!-- Priority Selection Row -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Priority:"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/lowPriorityBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="3dp"
+                        android:text="Low"
+                        android:textSize="12sp"
+                        android:textColor="#4CAF50"
+                        app:backgroundTint="@android:color/transparent"
+                        app:strokeColor="#4CAF50"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="10dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mediumPriorityBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:text="Medium"
+                        android:textSize="12sp"
+                        android:textColor="#FF9800"
+                        app:backgroundTint="@android:color/transparent"
+                        app:strokeColor="#FF9800"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="10dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/highPriorityBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="3dp"
+                        android:text="High"
+                        android:textSize="12sp"
+                        android:textColor="#F44336"
+                        app:backgroundTint="@android:color/transparent"
+                        app:strokeColor="#F44336"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Compact Action Buttons -->
+        <LinearLayout
+            android:id="@+id/actionButtonsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/taskInfoCard">
+
+            <!-- Cancel Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelTaskButton"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="Cancel"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                app:backgroundTint="@android:color/transparent"
+                app:strokeColor="#666666"
+                app:strokeWidth="1dp"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_close_clear_cancel"
+                app:iconTint="#666666"
+                app:iconSize="16dp" />
+
+            <!-- Save Task Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveTaskButton"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="Save Task"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#6366F1"
+                app:cornerRadius="12dp"
+                app:elevation="4dp"
+                app:icon="@android:drawable/ic_menu_save"
+                app:iconTint="#FFFFFF"
+                app:iconSize="16dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
