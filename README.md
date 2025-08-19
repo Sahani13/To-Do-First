@@ -208,7 +208,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions:
-- 📧 Email: [your-email@example.com]
+- 📧 Email: [sahani.weerasinghe20@gmail.com]
 - 🐛 Report bugs via GitHub Issues
 - 💬 Join our community discussions
 
